@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -50,6 +52,26 @@
 }
 
 @layer components {
+  .container-padding {
+    @apply w-full
+      /* Mobile */
+      px-4
+      /* Table */
+      medium:px-[calc((100vw-theme(screens.small))/2)] 
+      /* Desktop */
+      large:px-[calc((100vw-theme(screens.medium))/2)];
+  }
+
+  .nav-links a {
+    @apply relative flex items-center px-5 h-full font-medium transition
+    hover:before:scale-100 hover:text-focus
+    before:absolute before:bottom-0 before:left-0 before:right-0 before:h-[1px] before:bg-focus before:transition before:scale-0;
+  }
+
+  .nav-links a:hover::after {
+    @apply scale-100
+  }
+
   .content-container {
     @apply max-w-[1440px] w-full mx-auto px-8
   }

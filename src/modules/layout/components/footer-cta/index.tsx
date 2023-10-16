@@ -1,8 +1,10 @@
 import UnderlineLink from "@modules/common/components/underline-link"
 import Image from "next/image"
 
-const FooterCTA = () => {
+const FooterContact = () => {
+  // Contact Us form that lives in the footer
   return (
+
     <div className="bg-amber-100 w-full">
       <div className="content-container flex flex-col-reverse gap-y-8 small:flex-row small:items-center justify-between py-16 relative">
         <div>
@@ -29,4 +31,4 @@ const FooterCTA = () => {
   )
 }
 
-export default FooterCTA
+export default FooterContact

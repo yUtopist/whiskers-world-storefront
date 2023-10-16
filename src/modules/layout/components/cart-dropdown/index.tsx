@@ -20,9 +20,6 @@ const CartDropdown = () => {
   return (
     <div className="h-full z-50" onMouseEnter={open} onMouseLeave={close}>
       <Popover className="relative h-full">
-        <Popover.Button className="h-full">
-          <Link href="/cart">{`My Bag (${totalItems})`}</Link>
-        </Popover.Button>
         <Transition
           show={state}
           as={Fragment}
@@ -82,7 +79,7 @@ const CartDropdown = () => {
                           <div className="flex items-end justify-between text-small-regular flex-1">
                             <div>
                               <button
-                                className="flex items-center gap-x-1 text-gray-500"
+                                className="Button flex items-center gap-x-1 text-gray-500"
                                 onClick={() => deleteItem(item.id)}
                               >
                                 <Trash size={14} />

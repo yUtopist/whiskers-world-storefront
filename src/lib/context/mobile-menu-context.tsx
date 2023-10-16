@@ -25,11 +25,7 @@ interface MobileMenuContext {
 
 export const MobileMenuContext = createContext<MobileMenuContext | null>(null)
 
-export const MobileMenuProvider = ({
-  children,
-}: {
-  children: React.ReactNode
-}) => {
+export const MobileMenuProvider = ({ children }: { children: React.ReactNode }) => {
   const { state, close, open, toggle } = useToggleState()
   const [screen, setScreen] = useState<ScreenType>("main")
 

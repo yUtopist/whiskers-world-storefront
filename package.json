@@ -1,8 +1,7 @@
 {
-  "name": "medusa-next",
-  "version": "1.0.3",
-  "private": true,
-  "author": "Kasper Fabricius Kristensen <kasper@medusajs.com> (https://www.medusajs.com)",
+  "name": "whiskers-world-store-frontpage",
+  "version": "1.0",
+  "author": "Aleksei Stukalov <aleksei@blackdotdigital.co.nz>",
   "description": "Next.js starter to be used with Medusa server",
   "keywords": [
     "medusa-storefront"
@@ -36,13 +35,14 @@
     "clsx": "^1.1.1",
     "lodash": "^4.17.21",
     "medusa-react": "^9.0.0",
-    "next": "^13.4.5",
+    "next": "^13.5.4",
     "react": "^18.2.0",
     "react-country-flag": "^3.0.2",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.30.0",
     "react-instantsearch-hooks-web": "^6.29.0",
     "react-intersection-observer": "^9.3.4",
+    "sass": "^1.69.3",
     "sharp": "^0.30.7",
     "webpack": "^5"
   },

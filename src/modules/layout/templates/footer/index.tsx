@@ -1,13 +1,11 @@
-import FooterCTA from "@modules/layout/components/footer-cta"
+import FooterContact from "@modules/layout/components/footer-cta"
 import FooterNav from "@modules/layout/components/footer-nav"
-import MedusaCTA from "@modules/layout/components/medusa-cta"
 
 const Footer = () => {
   return (
-    <footer>
-      <FooterCTA />
+    <footer className="bg-paw">
+      <FooterContact />
       <FooterNav />
-      <MedusaCTA />
     </footer>
   )
 }

@@ -9,17 +9,14 @@ import { MedusaProvider, CartProvider } from "medusa-react"
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <MedusaProvider
-      baseUrl={MEDUSA_BACKEND_URL}
-      queryClientProviderProps={{
-        client: queryClient,
-      }}
-    >
+    <MedusaProvider baseUrl={MEDUSA_BACKEND_URL} queryClientProviderProps={{ client: queryClient, }} >
       <CartDropdownProvider>
         <MobileMenuProvider>
           <CartProvider>
             <StoreProvider>
-              <AccountProvider>{children}</AccountProvider>
+              <AccountProvider>
+                {children}
+                </AccountProvider>
             </StoreProvider>
           </CartProvider>
         </MobileMenuProvider>
