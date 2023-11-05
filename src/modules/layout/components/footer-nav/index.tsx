@@ -1,26 +1,21 @@
 "use client"
 
-import { useCollections, useProductCategories } from "medusa-react"
 import clsx from "clsx"
 import Link from "next/link"
 import Image from "next/image"
 
 const FooterNav = () => {
-  const { collections } = useCollections()
-  const { product_categories } = useProductCategories()
+  const footerStyle = clsx(
+    "container-padding",
+    "bg-paw",
+    "pt-20",
+    "flex",
+    "flex-wrap",
+    "text-bright"
+  )
 
   return (
-    <footer
-      className={clsx(
-        "container-padding",
-        "bg-paw",
-        "pt-20",
-        "flex",
-        "flex-wrap",
-        "text-bright"
-      )}
-    >
-      {/* Information */}
+    <footer className={footerStyle}>
       <div className="flex flex-col gap-14 grow">
         <Link href="/">
           <Image
@@ -57,31 +52,35 @@ const FooterNav = () => {
           />
         </a>
       </div>
-      {/* Sitemap*/}
-      <div className="w-1/5">
-        <h4 className="font-semibold">Shopping</h4>
-        <ul className="flex flex-col gap-1 mt-6">
-          <li><Link href="/">By Breed</Link></li>
-          <li><Link href="/">Recently Added</Link></li>
-          <li><Link href="/">Featured Whiskers</Link></li>
-        </ul>
+
+      <div className="flex gap-20">
+        <div>
+          <h4 className="font-semibold ">Shopping</h4>
+          <ul className="flex flex-col gap-1 mt-6">
+            <PageLink href="/search?by=breed">By Breed</PageLink>
+            <PageLink href="/search?by=recent">Recently Added</PageLink>
+            <PageLink href="/search?by=featured">Featured Whiskers</PageLink>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold">Whiskers World</h4>
+          <ul className="flex flex-col gap-1 mt-6">
+            <PageLink href="/about">About Us</PageLink>
+            <PageLink href="/contact">Contact</PageLink>
+            <PageLink href="/faq">FAQ</PageLink>
+            <PageLink href="/return-policy">Return Policy</PageLink>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h4 className="font-semibold">Whiskers World</h4>
-        <ul className="flex flex-col gap-1 mt-6">
-          <li><Link href="/">About Us</Link></li>
-          <li><Link href="/">Contact</Link></li>
-          <li><Link href="/">FAQ</Link></li>
-          <li><Link href="/">Privacy Policy</Link></li>
-          <li><Link href="/">Terms and Conditions</Link></li>
-          <li><Link href="/">Return Policy</Link></li>
-        </ul>
-      </div>
-      {/* Credentials */}
+
       <div className="w-full mt-28 flex items-center">
         <h5 className="font-medium">
           Whiskers World made by{" "}
-          <a href="https://blackdotdigital.co.nz" className="underline">
+          <a
+            target="_blank"
+            href="https://blackdotdigital.co.nz"
+            className="underline"
+          >
             Blackdot Digital
           </a>
         </h5>
@@ -94,6 +93,21 @@ const FooterNav = () => {
         />
       </div>
     </footer>
+  )
+}
+
+interface PageLinkInterface {
+  href: string
+  children: React.ReactNode
+}
+
+const PageLink = ({ href, children }: PageLinkInterface) => {
+  return (
+    <li>
+      <Link href={href} className="hover:underline">
+        {children}
+      </Link>
+    </li>
   )
 }
 
