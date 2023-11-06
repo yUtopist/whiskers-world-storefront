@@ -1,5 +1,3 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # IDEs
 .idea
 .vscode
@@ -42,6 +40,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 node_modules
+
+# envirement setup
+.prettierrc
 
 .yarn
 .swc
